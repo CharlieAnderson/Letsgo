@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <declare-styleable name="EventFeedConstraintLayout"></declare-styleable>
+    <declare-styleable name="EventFeedConstraintLayout">
+        <attr name="child_id" format="reference" />
+    </declare-styleable>
 </resources>
