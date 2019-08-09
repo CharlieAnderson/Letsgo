@@ -4,27 +4,27 @@
             xmlns:tools="http://schemas.android.com/tools" android:id="@+id/nav_graph"
             app:startDestination="@id/splashScreenFragment">
 
-    <fragment android:id="@+id/eventFeedFragment" android:name="com.example.charlesanderson.letsgo.EventFeedFragment"
+    <fragment android:id="@+id/eventFeedFragment" android:name="com.example.charlesanderson.letsgo.fragments.EventFeedFragment"
               android:label="fragment_event_feed" tools:layout="@layout/fragment_event_feed">
         <action android:id="@+id/action_eventFeedFragment_to_calendarFragment" app:destination="@id/loginGraph"/>
         <action android:id="@+id/action_eventFeedFragment_to_calendarFragment2" app:destination="@id/calendarFragment"/>
         <action android:id="@+id/action_eventFeedFragment_to_eventFragment" app:destination="@id/eventFragment"/>
         <action android:id="@+id/action_eventFeedFragment_to_profileFragment" app:destination="@id/profileFragment"/>
-        <action android:id="@+id/action_eventFeedFragment_to_createEvent" app:destination="@id/createEvent"/>
+        <action android:id="@+id/action_eventFeedFragment_to_createEventFragment" app:destination="@id/createEventFragment"/>
     </fragment>
     <navigation android:id="@+id/loginGraph" android:label="Login" app:startDestination="@id/titleFragment">
-        <fragment android:id="@+id/titleFragment" android:name="com.example.charlesanderson.letsgo.TitleFragment"
+        <fragment android:id="@+id/titleFragment" android:name="com.example.charlesanderson.letsgo.fragments.TitleFragment"
                   android:label="fragment_title" tools:layout="@layout/fragment_title">
             <action android:id="@+id/action_titleFragment_to_signupFragment" app:destination="@id/signupFragment"/>
             <action android:id="@+id/action_titleFragment_to_loginFragment" app:destination="@id/loginFragment"/>
             <action android:id="@+id/action_titleFragment_to_eventFeedFragment" app:destination="@id/eventFeedFragment"/>
         </fragment>
-        <fragment android:id="@+id/loginFragment" android:name="com.example.charlesanderson.letsgo.LoginFragment"
+        <fragment android:id="@+id/loginFragment" android:name="com.example.charlesanderson.letsgo.fragments.LoginFragment"
                   android:label="fragment_login" tools:layout="@layout/fragment_login">
             <action android:id="@+id/action_loginFragment_to_eventFeedFragment"
                     app:destination="@id/eventFeedFragment"/>
         </fragment>
-        <fragment android:id="@+id/signupFragment" android:name="com.example.charlesanderson.letsgo.SignupFragment"
+        <fragment android:id="@+id/signupFragment" android:name="com.example.charlesanderson.letsgo.fragments.SignupFragment"
                   android:label="fragment_signup" tools:layout="@layout/fragment_signup">
             <action android:id="@+id/action_signupFragment_to_eventFeedFragment"
                     app:destination="@id/eventFeedFragment"/>
@@ -32,29 +32,30 @@
 
         <action android:id="@+id/action_global_eventFeedFragment" app:destination="@id/eventFeedFragment"/>
     </navigation>
-    <fragment android:id="@+id/calendarFragment" android:name="com.example.charlesanderson.letsgo.CalendarFragment"
+    <fragment android:id="@+id/calendarFragment" android:name="com.example.charlesanderson.letsgo.fragments.CalendarFragment"
               android:label="fragment_calendar" tools:layout="@layout/fragment_calendar">
         <action android:id="@+id/action_calendarFragment_to_eventFragment" app:destination="@id/eventFragment"/>
-        <action android:id="@+id/action_calendarFragment_to_createEvent" app:destination="@id/createEvent"/>
+        <action android:id="@+id/action_calendarFragment_to_createEventFragment" app:destination="@id/createEventFragment"/>
     </fragment>
-    <fragment android:id="@+id/eventFragment" android:name="com.example.charlesanderson.letsgo.EventFragment"
+    <fragment android:id="@+id/eventFragment" android:name="com.example.charlesanderson.letsgo.fragments.EventFragment"
               android:label="fragment_event" tools:layout="@layout/fragment_event">
         <action android:id="@+id/action_eventFragment_to_groupChatFragment" app:destination="@id/groupChatFragment"/>
     </fragment>
-    <fragment android:id="@+id/profileFragment" android:name="com.example.charlesanderson.letsgo.ProfileFragment"
+    <fragment android:id="@+id/profileFragment" android:name="com.example.charlesanderson.letsgo.fragments.ProfileFragment"
               android:label="fragment_profile" tools:layout="@layout/fragment_profile"/>
-    <fragment android:id="@+id/groupChatFragment" android:name="com.example.charlesanderson.letsgo.GroupChatFragment"
+    <fragment android:id="@+id/groupChatFragment" android:name="com.example.charlesanderson.letsgo.fragments.GroupChatFragment"
               android:label="fragment_group_chat" tools:layout="@layout/fragment_group_chat"/>
     <fragment android:id="@+id/splashScreenFragment"
-              android:name="com.example.charlesanderson.letsgo.SplashScreenFragment"
+              android:name="com.example.charlesanderson.letsgo.fragments.SplashScreenFragment"
               android:label="fragment_splash_screen" tools:layout="@layout/fragment_splash_screen">
         <action android:id="@+id/action_splashScreenFragment_to_eventFeedFragment"
                 app:destination="@id/eventFeedFragment"/>
         <action android:id="@+id/action_splashScreenFragment_to_loginGraph" app:destination="@id/loginGraph"/>
     </fragment>
-    <fragment android:id="@+id/createEvent" android:name="com.example.charlesanderson.letsgo.createEvent"
+    <fragment android:id="@+id/createEventFragment" android:name="com.example.charlesanderson.letsgo.fragments.CreateEventFragment"
               android:label="fragment_create_event" tools:layout="@layout/fragment_create_event">
-        <action android:id="@+id/action_createEvent_to_eventFeedFragment" app:destination="@id/eventFeedFragment"/>
-        <action android:id="@+id/action_createEvent_to_calendarFragment" app:destination="@id/calendarFragment"/>
+        <action android:id="@+id/action_createEventFragment_to_eventFeedFragment" app:destination="@id/eventFeedFragment"/>
+        <action android:id="@+id/action_createEventFragment_to_calendarFragment" app:destination="@id/calendarFragment"/>
+        <argument android:name="Event" app:argType="com.example.charlesanderson.letsgo.models.Event"/>
     </fragment>
 </navigation>

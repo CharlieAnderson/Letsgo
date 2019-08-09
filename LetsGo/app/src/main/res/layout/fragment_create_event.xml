@@ -1,38 +1,67 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                                                   xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
-             android:layout_width="match_parent"
-             android:layout_height="match_parent"
-             tools:context=".createEvent">
+                                                   xmlns:app="http://schemas.android.com/apk/res-auto"
+                                                   xmlns:tools="http://schemas.android.com/tools"
+                                                   android:layout_width="match_parent"
+                                                   android:layout_height="match_parent"
+                                                   tools:context=".fragments.CreateEventFragment"
+                                                   android:background="@color/colorPrimary"
+                                                   android:textAlignment="center">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="32sp"
+            android:textSize="28sp"
+            android:textColor="#fff"
             android:text="Create Event" android:layout_marginTop="8dp"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
             android:id="@+id/textView2"/>
     <EditText
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:elevation="12dp"
+            android:padding="8dp"
+            android:textAlignment="center"
+            android:inputType="textShortMessage"
+            android:id="@+id/create_event_title"
+            android:layout_marginStart="64dp"
+            android:background="@drawable/grid_item_outline"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginEnd="64dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="24dp"
+            app:layout_constraintTop_toBottomOf="@+id/textView2"
+            android:hint="Event Title" android:textSize="24sp"
+            android:textColorHint="#BF333333"/>
+    <EditText
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:elevation="12dp"
+            android:padding="12dp"
+            android:background="@drawable/grid_item_outline"
+            android:inputType="textMultiLine"
+            android:gravity="start|top"
+            android:ems="10"
+            android:textSize="20sp"
+            android:id="@+id/create_event_description" android:layout_marginTop="240dp"
+            app:layout_constraintTop_toBottomOf="@+id/create_event_title" android:layout_marginBottom="128dp"
+            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.034"
+            android:layout_marginStart="64dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginEnd="64dp" app:layout_constraintEnd_toEndOf="parent" android:hint="Event Description..."
+            android:textColorHint="#BF333333"/>
+    <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:inputType="textShortMessage"
-            android:ems="10"
-            android:id="@+id/create_event_title"
-            android:layout_marginStart="8dp"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginEnd="8dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginTop="24dp" app:layout_constraintTop_toBottomOf="@+id/textView2"
-            android:hint="Event TItle"/>
-    <CalendarView
-            android:layout_width="410dp"
-            android:layout_height="401dp"
-            android:id="@+id/calendarView"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.488" android:layout_marginTop="32dp"
+            android:hint="Set Date and Time"
+            android:textColorHint="#E6FFFFFF"
+            android:textAlignment="center"
+            android:id="@+id/create_event_date" android:layout_marginTop="8dp"
             app:layout_constraintTop_toBottomOf="@+id/create_event_title" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintVertical_bias="0.0"/>
+            app:layout_constraintBottom_toTopOf="@+id/create_event_description" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
+            android:textColor="#ffffff" android:textSize="24sp"/>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
